@@ -1,0 +1,13 @@
+<p>
+  <p>
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><strong><%= value %></strong></div>
+    <% end %>
+    </p>
+  <%= form_for :tweet, url: tweets_path, method: :post do |f| %>
+    <%=f.label 'message:'%>
+      <br>
+    <%= f.text_area :message %>
+    <%= f.submit "Send Tweet" %>
+  <% end %>
+</p>
